@@ -35,3 +35,6 @@
 [submodule "deps/GSL"]
 	path = deps/GSL
 	url = https://github.com/microsoft/GSL.git
+[submodule "deps/libsodium"]
+	path = deps/libsodium
+	url = https://github.com/jedisct1/libsodium
