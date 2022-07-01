@@ -33,7 +33,7 @@ namespace Components
 		Loader::Register(new Singleton());
 		Loader::Register(new Exception()); // install our exception handler as early as posssible to get better debug dumps from startup crashes
 
-		Loader::Register(new Auth());
+		//Loader::Register(new Auth());
 		Loader::Register(new Bans());
 		Loader::Register(new Bots());
 		Loader::Register(new Dvar());
@@ -85,7 +85,7 @@ namespace Components
 		Loader::Register(new QuickPatch());
 		Loader::Register(new Security());
 		Loader::Register(new ServerInfo());
-		Loader::Register(new ServerList());
+		//Loader::Register(new ServerList());
 		Loader::Register(new SlowMotion());
 		Loader::Register(new ArenaLength());
 		Loader::Register(new StringTable());
@@ -113,6 +113,7 @@ namespace Components
 		Loader::Register(new Ceg());
 		Loader::Register(new UserInfo());
 		Loader::Register(new Events());
+		Loader::Register(new NetchanEncrypt());
 
 		Loader::Pregame = false;
 

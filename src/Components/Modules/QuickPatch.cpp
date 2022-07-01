@@ -693,6 +693,8 @@ namespace Components
 		{
 			Utils::Hook::Set<BYTE>(0x60BECF, 0xEB);
 		}
+
+		Utils::Hook::Set<DWORD>(0x4D0D60, 0xC301B0);
 	}
 
 	bool QuickPatch::unitTest()

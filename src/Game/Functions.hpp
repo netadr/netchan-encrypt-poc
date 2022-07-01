@@ -1080,6 +1080,21 @@ namespace Game
 	typedef void(__cdecl * player_die_t)(gentity_s* self, const gentity_s* inflictor, gentity_s* attacker, int damage, int meansOfDeath, int iWeapon, const float* vDir, const hitLocation_t hitLoc, int psTimeOffset);
 	extern player_die_t player_die;
 
+	typedef bool(__cdecl* IsServerRunning_t)();
+	extern IsServerRunning_t IsServerRunning;
+
+	typedef bool(__cdecl* Netchan_Process_t)(netchan_t* chan, msg_t* msg);
+	extern Netchan_Process_t Netchan_Process;
+
+	typedef void(__cdecl* SV_FreeClient_t)(client_t* cl);
+	extern SV_FreeClient_t SV_FreeClient;
+
+	typedef void(__cdecl* CL_ClearClientState_t)(int localClientNum);
+	extern CL_ClearClientState_t CL_ClearClientState;
+
+	typedef void(__cdecl* SV_Live_RemoveClient_t)(client_t* cl, const char* reason, bool tellThem);
+	extern SV_Live_RemoveClient_t SV_Live_RemoveClient;
+
 	extern XAssetHeader* DB_XAssetPool;
 	extern unsigned int* g_poolSize;
 

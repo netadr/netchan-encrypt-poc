@@ -451,6 +451,16 @@ namespace Game
 
 	player_die_t player_die = player_die_t(0x42BC70);
 
+	IsServerRunning_t IsServerRunning = IsServerRunning_t(0x64C620);
+
+	Netchan_Process_t Netchan_Process = Netchan_Process_t(0x4AAD80);
+
+	SV_FreeClient_t SV_FreeClient = SV_FreeClient_t(0x6251F0);
+
+	CL_ClearClientState_t CL_ClearClientState = CL_ClearClientState_t(0x4D5480);
+
+	SV_Live_RemoveClient_t SV_Live_RemoveClient = SV_Live_RemoveClient_t(0x4C17C0);
+
 	XAssetHeader* DB_XAssetPool = reinterpret_cast<XAssetHeader*>(0x7998A8);
 	unsigned int* g_poolSize = reinterpret_cast<unsigned int*>(0x7995E8);
 

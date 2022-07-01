@@ -83,6 +83,7 @@
 #include <mongoose.h>
 #include <udis86.h>
 #include <zlib.h>
+#include <sodium.h>
 
 // Enable additional literals
 using namespace std::literals;
@@ -111,6 +112,7 @@ using namespace std::literals;
 #include "proto/rcon.pb.h"
 #include "proto/ipc.pb.h"
 #include "proto/friends.pb.h"
+#include "proto/crypt.pb.h"
 
 #pragma warning(pop)
 

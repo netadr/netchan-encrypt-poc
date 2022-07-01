@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package Proto.Crypt;
+
+message Issuer {
+	bytes issuedpub = 1;
+	bytes issuedpubsig = 2;
+	bytes issuedsecret = 3;
+	bytes issuerpub = 4;
+}
+		
+message Connect {
+	bytes clientpubkey = 1;
+	bytes clientpubkeysig = 2;
+}
+
+message ConnectResponse {
+	bytes serverpubkey = 1;
+	bytes serverpubkeysig = 2;
+}
