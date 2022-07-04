@@ -51,22 +51,27 @@ namespace Components
 
 	class Signature {
 	public:
-		Signature(const uint8_t* sig)
+		Signature()
 		{
-			memcpy(signature, sig, sizeof(signature));
+			sodium_memzero(pk, sizeof(pk));
+		}
+
+		Signature(const uint8_t* pub)
+		{
+			memcpy(pk, pub, sizeof(pk));
 		}
 
 		~Signature()
 		{
-			sodium_memzero(signature, sizeof(signature));
+			sodium_memzero(pk, sizeof(pk));
 		}
 
-		const std::span<const uint8_t> GetSignature() const
+		bool Verify(const std::span<const uint8_t> message, const uint8_t* sig) const
 		{
-			return signature;
+			return (crypto_sign_verify_detached(sig, message.data(), message.size(), pk) == 0);
 		}
 	private:
-		uint8_t signature[crypto_sign_BYTES];
+		uint8_t pk[crypto_sign_PUBLICKEYBYTES];
 	};
 
 	class SecureChannel {
@@ -197,6 +202,7 @@ namespace Components
 		~NetchanEncrypt();
 	private:
 		static X25519 AsymmetricKey;
+		static Signature KeySignature;
 		static SecureChannel ClientChannel;
 		static SecureChannel SavedServerChannel;
 		static std::unordered_map<uint64_t, SecureChannel> ServerChannels;

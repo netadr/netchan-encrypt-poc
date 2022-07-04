@@ -3,6 +3,7 @@
 namespace Components
 {
 	X25519 NetchanEncrypt::AsymmetricKey;
+	Signature NetchanEncrypt::KeySignature;
 	SecureChannel NetchanEncrypt::ClientChannel(SecureChannel::Mode::MODE_CLIENT);
 	SecureChannel NetchanEncrypt::SavedServerChannel(SecureChannel::Mode::MODE_SERVER);
 	std::unordered_map<uint64_t, SecureChannel> NetchanEncrypt::ServerChannels;
