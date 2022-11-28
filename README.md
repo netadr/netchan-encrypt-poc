@@ -1,3 +1,12 @@
+# PLEASE READ
+This is a *proof-of-concept* I wrote in July 2022 for adding an encryption layer to iw4's netchan system.  
+It includes a key exchange using Curve25519, and encryption/authentication implemented using XChaCha20-Poly1305.  
+
+Relevant source files are:
+
+[NetchanEncrypt.cpp](src/Components/Modules/NetchanEncrypt.cpp)
+[NetchanEncrypt.hpp](src/Components/Modules/NetchanEncrypt.hpp)
+
 ![license](https://img.shields.io/github/license/IW4x/iw4x-client.svg)
 ![forks](https://img.shields.io/github/forks/IW4x/iw4x-client.svg)
 ![stars](https://img.shields.io/github/stars/IW4x/iw4x-client.svg)
